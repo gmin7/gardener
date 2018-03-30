@@ -1,5 +1,6 @@
 # gardener
 
+hi! this is an assembly n' c plant scanner. i mean it's spring, so it's only appropriate that we get a headstart on our gardening!
 some to-dos:
 <ul>
   <li> vga display </li>
