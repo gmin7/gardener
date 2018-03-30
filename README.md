@@ -1,9 +1,11 @@
 # gardener
 
 some to-dos:
--vga display
--create barcodes with assigned plants
--automate the scanner (make it move)
--connect light sensors (value mode?)
--store the input
--c database hookup
+<ul>
+  <li> vga display </li>
+  <li>create barcodes with assigned plants</li>
+<li>automate the scanner (make it move)</li>
+<li>connect light sensors (value mode?)</li>
+<li>store the input</li>
+<li>c database hookup</li>
+</ul>
