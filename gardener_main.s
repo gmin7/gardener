@@ -10,7 +10,7 @@ summmary: in effect, this is an assembly 'n c based plant scanner.
 Pseudocode:
   start the Timer
   poll waiting for restart signal from JTAG
-  
+
 */
 
 .data
@@ -18,5 +18,7 @@ Pseudocode:
 
 .text
 .global _start:
+
+  call clock
 
 _start:
