@@ -4,10 +4,8 @@ Sensor3 value becomes greater than a threshold value of 0x5 (using state mode)"*
 
 /*********DECLARE CONSTANTS***********/
 
-.equ ADDR_JP2, 0xFF200070     # address GPIO JP2
+.equ ADDR_JP2, 0xFF200070      # address GPIO JP2
 .equ ADDR_JP2_IRQ, 0x1000      # IRQ line for GPIO JP2 (IRQ12)
-
-
 
 
 light_sensor_rs:

@@ -15,6 +15,8 @@ Pseudocode:
 
 .data
 
+  type_counter: .word 0 #initialize counter
+
 
 .text
 .global _start:

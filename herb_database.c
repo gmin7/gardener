@@ -12,30 +12,30 @@ int herb_database(int type){
   #define  lavendar   4
   #define  thyme      5
 
-  switch (type)
+  switch (type_counter)
   ​{
       case rosemary:
-          //load rosemary.bmp;
+          //load herb_images/rosemary.bmp;
           break;
 
       case basil:
-          //load basil.bmp;
+          //load herb_images/basil.bmp;
           break;
 
       case mint:
-          //load mint.bmp;
+          //load herb_images/mint.bmp;
           break;
 
       case parsely:
-          //load parsely.bmp;
+          //load herb_images/parsely.bmp;
           break;
 
       case lavendar:
-          //load lavendar.bmp;
+          //load herb_images/lavendar.bmp;
           break;
 
       case thyme:
-          //load thyme.bmp;
+          //load herb_images/thyme.bmp;
           break;
 
       default:
