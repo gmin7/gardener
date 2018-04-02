@@ -1,0 +1,11 @@
+Changelog
+
+  •thursday, march 29th
+      yitong:
+        -sample code for VGA tested in simulator, researched methods for embedding bmp files
+        -obtained specific parts necessary to assemble scanner, opted for gear track configuration as opposed to wheels
+
+  •friday, march 30th
+      michelle:
+        -wrote isr pseudocode and skeleton
+        -clock ticks for 10sec, have yet to integrate with motor module

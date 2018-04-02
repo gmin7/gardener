@@ -14,17 +14,14 @@ light_sensor_rs:
    stwio  r9, 4(r8)
 
 # load sensor3 threshold value 5 and enable sensor3
-
    movia  r9,  0xfabeffff       # set motors off enable threshold load sensor 3
    stwio  r9,  0(r8)            # store value into threshold register
 
 # disable threshold register and enable state mode
-
    movia  r9,  0xfadfffff      # keep threshold value same in case update occurs before state mode is enabled
    stwio  r9,  0(r8)
 
 # enable interrupts
-
     movia  r12, 0x40000000       # enable interrupts on sensor 3
     stwio  r12, 8(r8)
 
