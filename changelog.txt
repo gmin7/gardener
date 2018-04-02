@@ -5,6 +5,9 @@ Changelog
         -sample code for VGA tested in simulator, researched methods for embedding bmp files
         -obtained specific parts necessary to assemble scanner, opted for gear track configuration as opposed to wheels
 
+      michelle:
+        -built scanner out of lego-> tried to model virtually but struggled to place
+
   •friday, march 30th
       michelle:
         -wrote isr pseudocode and skeleton
