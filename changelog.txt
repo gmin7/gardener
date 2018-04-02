@@ -6,9 +6,14 @@ Changelog
         -obtained specific parts necessary to assemble scanner, opted for gear track configuration as opposed to wheels
 
       michelle:
-        -built scanner out of lego-> tried to model virtually but struggled to place
+        -built scanner out of lego-> have to still test whether motor propels the wheels forward, then adjust PWM by seeing how far scanner
+        moves in 2sec
 
   •friday, march 30th
       michelle:
         -wrote isr pseudocode and skeleton
         -clock ticks for 10sec, have yet to integrate with motor module
+
+  •saturday, march 31st
+      yitong:
+        -found how to convert and draw the raw images to the vga using for loop to iterate through pixels
