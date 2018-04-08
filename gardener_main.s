@@ -5,7 +5,6 @@ authors: yitong wang, michelle dimarco
 summmary: in effect, this is an assembly 'n c based plant scanner.
 ******/
 
-
 /*
 Pseudocode:
   start the Timer
@@ -15,12 +14,13 @@ Pseudocode:
 
 .data
 
-  type_counter: .word 0 #initialize counter
+  COUNTER: .word 0 #initialize counter
 
 
 .text
 .global _start:
 
   call clock
+  
 
 _start:

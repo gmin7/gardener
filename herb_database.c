@@ -6,9 +6,9 @@ int herb_database(int type){
   //to the VGA display
 
   #define  rosemary   0
-  #define  basil      1
+  #define  parsely    1
   #define  mint       2
-  #define  parsely    3
+  #define  basil      3
   #define  lavendar   4
   #define  thyme      5
 
