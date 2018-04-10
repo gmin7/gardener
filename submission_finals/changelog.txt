@@ -1,0 +1,37 @@
+Changelog
+
+  •thursday, march 29th
+      yitong:
+        -sample code for VGA tested in simulator, researched methods for embedding bmp files
+        -obtained specific parts necessary to assemble scanner, opted for gear track configuration as opposed to wheels
+
+      michelle:
+        -built scanner out of lego-> have to still test whether motor propels the wheels forward, then adjust PWM by seeing how far scanner
+        moves in 2sec
+
+  •friday, march 30th
+      michelle:
+        -wrote isr pseudocode and skeleton
+        -clock ticks for 10sec, have yet to integrate with motor module
+
+  •saturday, march 31st
+      yitong:
+        -found how to convert and draw the raw images to the vga using for loop to iterate through pixels
+
+******NEW******
+
+
+
+  •sunday, april 10th
+      -configured state mode for the light sensor with interrupts functioning
+      -motor works incrementally
+      -played tones in introduction
+  •monday, april 9th
+      -finished all images and loaded the bmps in proper sequence with delays and
+  •tuesday, april 10th
+      -added the unknown plant/default case in c program
+      -looped the program back to start and moved car in reverse
+
+
+//thanks for a great semester daniel :-)
+//-yitong & michelle
