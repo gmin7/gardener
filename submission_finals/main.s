@@ -105,9 +105,9 @@ loop2:
 	subi r4, r4, 1
 	bne r4, r0, loop2
 
-	
 
-	
+
+
 /*********************LOAD TITLE CARD 2************************/
 
 movia r4, TITLE2 		#r14 is the pixel pointer points to the image
@@ -306,9 +306,9 @@ EndNoteSequence:
 
 
 
-  
-  
-  
+
+
+
 
 
 
@@ -359,43 +359,43 @@ EndNoteSequence:
 
     movia  r8, 1
     wrctl  ctl0, r8            # enable global interrupts
-	
 
-	
+
+
 
 /********************BEGIN TIMED MOTION MOVEMENT************************/
-	
-	
-	
-initClock:	
-   movia r7, 0xFF202000                   # r7 contains the base address for the timer 
-   
-   
+
+
+
+initClock:
+   movia r7, 0xFF202000                   # r7 contains the base address for the timer
+
+
    #reset
    stwio r0, 0(r7)
-   
-   
+
+
    addi  r2, r0, %lo(TICKSPERSEC)
-   stwio r2, 8(r7)  
-   addi  r2, r0, %hi(TICKSPERSEC)   
+   stwio r2, 8(r7)
+   addi  r2, r0, %hi(TICKSPERSEC)
    stwio r2, 12(r7)
 
    movui r2, 4
-   stwio r2, 4(r7)                          # Start the timer without continuing or interrupts 
-	
+   stwio r2, 4(r7)                          # Start the timer without continuing or interrupts
 
-	
+
+
 #poll clock
 	movi r15, 0    #enable forward
-pollClock:	
-    movia r7, 0xFF202000   
+pollClock:
+    movia r7, 0xFF202000
 	ldwio r2, 0(r7)
 	movui r3, 1
 	and r2, r3, r2
 	bne r2, r0, finalStop
 
-	
-#----------motor motion part--------------------#	
+
+#----------motor motion part--------------------#
 
 NEXTMOVE:
 	movi r17, 0
@@ -435,22 +435,22 @@ finalStop:
 #	movi r6, 0
 #	stw r6, 0(r4)
 #	bne r5, r0, initClock
-	
+
     movia  r8, ADDR_JP2         # load address GPIO JP2 into r8
     movia r9, motorOff
 	stwio r9, 0(r8)
 
 
 
-	
-	
-	
-/************** LOAD PLANT ******************/	
-	
-	
-CallCaseStatement:	
+
+
+
+/************** LOAD PLANT ******************/
+
+
+CallCaseStatement:
     call herb_select
-	
+
 
 
 
@@ -468,38 +468,38 @@ loop8:
 /******GO BACKWARDS**********/
 
 /********************BEGIN TIMED MOTION MOVEMENT************************/
-	
-	
-	
-initClock2:	
-   movia r7, 0xFF202000                   # r7 contains the base address for the timer 
-   
-   
+
+
+
+initClock2:
+   movia r7, 0xFF202000                   # r7 contains the base address for the timer
+
+
    #reset
    stwio r0, 0(r7)
-   
-   
+
+
    addi  r2, r0, %lo(TICKSPERSEC)
-   stwio r2, 8(r7)  
-   addi  r2, r0, %hi(TICKSPERSEC)   
+   stwio r2, 8(r7)
+   addi  r2, r0, %hi(TICKSPERSEC)
    stwio r2, 12(r7)
 
    movui r2, 4
-   stwio r2, 4(r7)                          # Start the timer without continuing or interrupts 
-	
+   stwio r2, 4(r7)                          # Start the timer without continuing or interrupts
 
-	
+
+
 #poll clock
 	movi r15, 0    #enable forward
-pollClock2:	
-    movia r7, 0xFF202000   
+pollClock2:
+    movia r7, 0xFF202000
 	ldwio r2, 0(r7)
 	movui r3, 1
 	and r2, r3, r2
 	bne r2, r0, finalStop2
 
-	
-#----------motor motion part--------------------#	
+
+#----------motor motion part--------------------#
 
 NEXTMOVE2:
 	movi r17, 0
@@ -539,7 +539,7 @@ finalStop2:
 #	movi r6, 0
 #	stw r6, 0(r4)
 #	bne r5, r0, initClock2
-	
+
     movia  r8, ADDR_JP2         # load address GPIO JP2 into r8
     movia r9, motorOff
 	stwio r9, 0(r8)
@@ -592,7 +592,7 @@ ISR:
   ldw r5, 0(r4)
   addi r5, r5, 1
   stw r5, 0(r4)
- 
+
 
 EXIT:
 
@@ -605,10 +605,10 @@ EXIT:
 
 	subi ea, ea, 4#restore the address of next instruction
 	eret
-	
 
 
-DRAW_IMAGE: 
+
+DRAW_IMAGE:
 	subi sp, sp, 28
 	stw r19, 0(sp)
 	stw r20, 4(sp)
@@ -617,31 +617,31 @@ DRAW_IMAGE:
 	stw r17, 16(sp)
 	stw r18, 20(sp)
 	stw ra, 24(sp)
-	
-    movia r5, ADDR_VGA 
+
+    movia r5, ADDR_VGA
 	mov r6, r4
-	mov r7, r0  				#r10 is initial x=0 
-	movui et, 240			#r11 is initial y=239
-	movui r19, 320		#r12 max limit for x
+	mov r7, r0  				#x=0
+	movui et, 240			# y=240
+	movui r19, 320		
 	movia r20, 0xffffffff
 #draw the pixel
 draw_loop:
-	ldh r13,0(r6) 				#r13 stores pixel information
-	muli r16,r7,2 				#r16 = x*2
-	muli r17,et,1024			#r17 = y*1024
+	ldh r13,0(r6)
+	muli r16,r7,2
+	muli r17,et,1024
 	add r16,r16,r17				#r16= x*2 + y*1024
-	add r18,r16,r5				#add offset to address
+	add r18,r16,r5
 	beq r13, r20, SKIP
 	sthio r13,0(r18) 			#draw the pixel
 
-SKIP:	addi r6,r6,2   			#increase pixel pointer
+SKIP:	addi r6,r6,2
 	addi r7,r7,1   			#increase x
-	blt r7,r19,draw_loop 	#if x < 320, keep drawing 
+	blt r7,r19,draw_loop
 
-	mov r7,r0   				#reset x
-	subi et, et, 1	 			#decrease y
-	bge et,r0,draw_loop 	#if y > 0, keep drawing
-	
+	mov r7,r0
+	subi et, et, 1
+	bge et,r0,draw_loop
+
 	ldw r19, 0(sp)
 	ldw r20, 4(sp)
 	ldw r13, 8(sp)
@@ -651,7 +651,3 @@ SKIP:	addi r6,r6,2   			#increase pixel pointer
 	ldw ra, 24(sp)
 	addi sp, sp, 28
 ret
-	
-	
-	
-
